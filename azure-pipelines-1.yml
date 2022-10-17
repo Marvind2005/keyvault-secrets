@@ -15,8 +15,8 @@ steps:
   inputs:
     azureSubscription: 'KVTest'
     KeyVaultName: 'Disk-Encryption-vault'
-    SecretsFilter: '*' # 'DatabasePassword'
-    RunAsPreJob: false
+    SecretsFilter: '*'
+    RunAsPreJob: true
 
 - task: CmdLine@2
   displayName: Write Secret into File
