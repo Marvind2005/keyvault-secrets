@@ -14,7 +14,7 @@ steps:
   displayName: Get Secrets from Key Vault
   inputs:
     azureSubscription: 'KVTest'
-    KeyVaultName: 'databricks-marv'
+    KeyVaultName: 'Disk-Encryption-vault'
     SecretsFilter: '*'
     RunAsPreJob: false
 
