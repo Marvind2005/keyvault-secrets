@@ -6,16 +6,12 @@ pool:
 
 steps:
 
+
 - task: AzureKeyVault@2
   inputs:
     azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
-    SecretsFilter: '*' # 'DatabasePassword'
-- task: AzureKeyVault@2
-  inputs:
-    azureSubscription: 'KVTest'
-    KeyVaultName: 'new-test-marv'
-    SecretsFilter: '*'
+    SecretsFilter: '*'# 'DatabasePassword'
     RunAsPreJob: false
     
 - task: CmdLine@2
