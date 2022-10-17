@@ -10,7 +10,7 @@ steps:
   inputs:
     azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
-    SecretsFilter: '*'
+    SecretsFilter: '*' #  'DatabasePassword'
     RunAsPreJob: false
 - task: CmdLine@2
   displayName: Write Secret into File
