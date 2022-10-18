@@ -16,7 +16,7 @@ steps:
 - task: CmdLine@2
   displayName: Copy the secrets to a file
   inputs:
-    script: 'echo $(Vm-spoke-01) > secret.txt'
+    script: 'echo $(*) > secret.txt'
 
 - task: CopyFiles@2
   displayName: create the folder
