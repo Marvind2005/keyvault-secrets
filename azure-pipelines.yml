@@ -12,18 +12,3 @@ steps:
     KeyVaultName: 'new-test-marv'
     SecretsFilter: '*'
     RunAsPreJob: false
-
-    - task: CmdLine@2
-  inputs:
-    script: 'echo $(Vm-spoke-01) > secret.txt'
-
-- task: CopyFiles@2
-  inputs:
-    Contents: secret.txt
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
