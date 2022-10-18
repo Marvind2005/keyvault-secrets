@@ -10,7 +10,7 @@ steps:
   inputs:
     azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
-    SecretsFilter: '*' $ 'your-secret'
+    SecretsFilter: '*'
     RunAsPreJob: false
 
 - task: CmdLine@2
