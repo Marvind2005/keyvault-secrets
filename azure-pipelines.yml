@@ -4,9 +4,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+steps:
+  - 
 - task: AzureKeyVault@2
   inputs:
-    azureSubscription: 'KeyVault-Test'
+    azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
     SecretsFilter: '*'
     RunAsPreJob: false
