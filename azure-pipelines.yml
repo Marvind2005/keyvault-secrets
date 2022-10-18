@@ -7,7 +7,7 @@ pool:
 steps:
 - task: AzureKeyVault@2
   inputs:
-    azureSubscription: 'Your-Azure-Subscription'
+    azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
     SecretsFilter: '*'
     RunAsPreJob: false
