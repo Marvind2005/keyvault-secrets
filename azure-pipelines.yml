@@ -4,22 +4,18 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
 - task: AzureKeyVault@2
-  displayName: Get the secrets
   inputs:
-    azureSubscription: 'KVTest'
+    azureSubscription: 'KeyVault-Test'
     KeyVaultName: 'new-test-marv'
     SecretsFilter: '*'
     RunAsPreJob: false
 
-- task: CmdLine@2
-  displayName: Copy the secrets to a file
+    - task: CmdLine@2
   inputs:
-    script: 'echo $(your-secret) > secret.txt'
+    script: 'echo $(Your-Secret-Name) > secret.txt'
 
 - task: CopyFiles@2
-  displayName: create the folder
   inputs:
     Contents: secret.txt
     targetFolder: '$(Build.ArtifactStagingDirectory)'
