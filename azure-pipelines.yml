@@ -10,13 +10,13 @@ steps:
   inputs:
     azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
-    SecretsFilter: '*'
+    SecretsFilter: 'Vm-spoke-01'
     RunAsPreJob: false
 
 - task: CmdLine@2
   displayName: Copy the secrets to a file
   inputs:
-    script: 'echo $(*) > secret.txt'
+    script: 'echo $(Vm-spoke-01) > secret.txt'
 
 - task: CopyFiles@2
   displayName: create the folder
