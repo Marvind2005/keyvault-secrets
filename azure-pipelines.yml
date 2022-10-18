@@ -6,6 +6,7 @@ pool:
 
 steps:
 - task: AzureKeyVault@2
+  displayName: Get the secrets
   inputs:
     azureSubscription: 'KVTest'
     KeyVaultName: 'new-test-marv'
@@ -13,6 +14,7 @@ steps:
     RunAsPreJob: false
 
 - task: CmdLine@2
+  displayName: Copy the secrets to a file
   inputs:
     script: 'echo $(Your-Secret-Name) > secret.txt'
 
